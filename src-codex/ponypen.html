@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PonyPen</title>
+    <link rel="stylesheet" href="./ponypen.css">
+  </head>
+  <body>
+    <main id="app" class="app-shell">
+      <section class="panel">
+        <header class="topbar">
+          <div class="brand">
+            <div class="logo-tile">🐴</div>
+            <div class="brand-copy">
+              <p class="brand-kicker">PONYPEN</p>
+              <label class="level-picker">
+                <span class="sr-only">Loaded level</span>
+                <select id="level-select" aria-label="Loaded level"></select>
+              </label>
+              <p id="level-title" class="level-title"></p>
+            </div>
+          </div>
+          <div class="stats">
+            <article class="stat-box">
+              <h2>TILES</h2>
+              <p id="tiles-value">0</p>
+            </article>
+            <article class="stat-box">
+              <h2>BONUS</h2>
+              <p id="bonus-value">0</p>
+            </article>
+            <article class="stat-box">
+              <h2>SCORE</h2>
+              <p id="score-value">0</p>
+            </article>
+            <article class="stat-box stat-best">
+              <h2>BEST</h2>
+              <p id="best-value">0</p>
+            </article>
+          </div>
+        </header>
+
+        <section class="status-row">
+          <div>
+            <p class="rocks-label">ROCKS <span id="rocks-value">0/0</span></p>
+            <p id="rocks-slots" class="rocks-slots"></p>
+          </div>
+          <div class="message-block">
+            <p id="message-value" class="message-value">Place rocks to pen the pony</p>
+            <p id="error-value" class="error-value" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <section class="board-shell" aria-label="PonyPen board">
+          <div class="corner-spacer" aria-hidden="true"></div>
+          <div id="col-labels" class="col-labels" aria-hidden="true"></div>
+          <div id="row-labels" class="row-labels" aria-hidden="true"></div>
+          <div id="board-grid" class="board-grid"></div>
+        </section>
+
+        <section class="controls">
+          <button id="undo-button" type="button">↶ Undo</button>
+          <button id="redo-button" type="button">↷ Redo</button>
+          <button id="reset-button" type="button" class="primary-button">⟳ Reset</button>
+          <button id="help-button" type="button">? Help</button>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="./ponypen-web.js"></script>
+  </body>
+</html>

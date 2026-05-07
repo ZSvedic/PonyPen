@@ -1,0 +1,286 @@
+:root {
+  --page-bg: #0F0F1E;
+  --panel-bg: #1A1A2E;
+  --panel-border: #2A2A3E;
+  --muted-text: #8A8A9E;
+  --bright-text: #EEEEEE;
+  --accent: #F1C40F;
+  --tile-grass: #3FA84A;
+  --tile-water: #1E4E8E;
+  --tile-rock: #5F6872;
+  --tile-enclosed: #F1C40F;
+  --button-hover: #2D2D4E;
+  --tile-size: 3.4rem;
+  --tile-gap: 0.32rem;
+  --label-size: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(241, 196, 15, 0.14), transparent 26rem),
+    linear-gradient(180deg, #121226 0%, var(--page-bg) 55%);
+  color: var(--bright-text);
+  font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+.app-shell {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem 3rem;
+}
+
+.panel {
+  width: min(100%, 72rem);
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.28);
+  padding: 1.5rem;
+}
+
+.topbar,
+.status-row,
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.logo-tile {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 1rem;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  font-size: 2.4rem;
+}
+
+.brand-kicker,
+.stat-box h2,
+.rocks-label {
+  margin: 0;
+  color: var(--muted-text);
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
+}
+
+.level-picker select,
+.level-title {
+  font: inherit;
+}
+
+.level-picker select {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--bright-text);
+  font-size: 1.45rem;
+  padding: 0;
+}
+
+.level-title {
+  margin: 0.25rem 0 0;
+  color: var(--muted-text);
+}
+
+.stats {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  min-width: 5.8rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 1rem;
+  background: var(--panel-bg);
+}
+
+.stat-box p {
+  margin: 0.3rem 0 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.stat-best p {
+  color: var(--accent);
+}
+
+.status-row {
+  margin: 1.6rem 0 1.2rem;
+  align-items: flex-end;
+}
+
+.rocks-slots,
+.message-value,
+.error-value {
+  margin: 0.25rem 0 0;
+}
+
+.rocks-slots {
+  min-height: 1.5rem;
+  font-size: 1.25rem;
+  letter-spacing: 0.18em;
+}
+
+.message-block {
+  text-align: right;
+}
+
+.message-value {
+  color: var(--muted-text);
+}
+
+.error-value {
+  color: #ff9b8f;
+  min-height: 1.2rem;
+}
+
+.board-shell {
+  display: grid;
+  grid-template-columns: var(--label-size) 1fr;
+  grid-template-rows: var(--label-size) 1fr;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: start;
+}
+
+.corner-spacer {
+  width: var(--label-size);
+  height: var(--label-size);
+}
+
+.col-labels,
+.row-labels,
+.board-grid {
+  display: grid;
+}
+
+.col-labels {
+  grid-auto-flow: column;
+  grid-auto-columns: var(--tile-size);
+  gap: var(--tile-gap);
+}
+
+.row-labels {
+  grid-auto-rows: var(--tile-size);
+  gap: var(--tile-gap);
+}
+
+.coord-label {
+  display: grid;
+  place-items: center;
+  color: var(--muted-text);
+  font-weight: 600;
+}
+
+.board-grid {
+  display: grid;
+  gap: var(--tile-gap);
+}
+
+.tile {
+  width: var(--tile-size);
+  height: var(--tile-size);
+  border: 0;
+  border-radius: 0.8rem;
+  display: grid;
+  place-items: center;
+  color: var(--bright-text);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.16);
+}
+
+.tile-pony,
+.tile-cherry,
+.tile-apple,
+.tile-bee,
+.tile-portal,
+.tile-rock {
+  font-size: 1.65rem;
+}
+
+.controls {
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.6rem;
+}
+
+.controls button {
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  background: var(--panel-bg);
+  color: var(--bright-text);
+  padding: 0.8rem 1.1rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.controls button:hover:enabled {
+  background: var(--button-hover);
+}
+
+.controls button:disabled {
+  color: var(--tile-rock);
+  cursor: default;
+}
+
+.primary-button {
+  background: var(--bright-text) !important;
+  color: var(--panel-bg) !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --tile-size: 2.5rem;
+    --label-size: 1.6rem;
+  }
+
+  .topbar,
+  .status-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .message-block {
+    text-align: left;
+  }
+
+  .panel {
+    padding: 1rem;
+  }
+
+  .logo-tile {
+    width: 3.6rem;
+    height: 3.6rem;
+    font-size: 2rem;
+  }
+}
