@@ -1,0 +1,7 @@
+- Headless core: `ponypen-core.js`, JavaScript API, no DOM, no CLI, no runtime I/O.
+- CLI shell: `ponypen-cli.js`, `bun` shebang, uses only the headless core and ASCII output.
+- Web shell: `ponypen.html`, `ponypen.css`, `ponypen-web.js`, uses the headless core for game logic and renders via plain HTML/CSS grid (no `<canvas>`); may provide 2D and 3D views.
+- Levels: the implementation directory must reference [spec/levels/](./levels/) via a symlink (`levels -> ../spec/levels`) rather than copying the files, so the spec remains the single source of truth.
+- Avoid NPM hell:
+    - Minimal dependency tree.
+    - Use `bun`'s `minimumReleaseAge = 604800 # 7 days in sec`.

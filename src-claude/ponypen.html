@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PonyPen</title>
+  <link rel="stylesheet" href="./ponypen.css">
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <div class="logo">🐴</div>
+      <div class="title-block">
+        <div class="kicker">PONYPEN</div>
+        <select id="level-select" class="level-select"></select>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="stat-label">TILES</div><div id="stat-tiles" class="stat-value">0</div></div>
+        <div class="stat"><div class="stat-label">BONUS</div><div id="stat-bonus" class="stat-value">0</div></div>
+        <div class="stat"><div class="stat-label">SCORE</div><div id="stat-score" class="stat-value">0</div></div>
+        <div class="stat"><div class="stat-label">BEST</div><div id="stat-best" class="stat-value stat-best">0</div></div>
+      </div>
+    </header>
+
+    <section class="rocks-strip">
+      <div id="rocks-label">ROCKS 0/0</div>
+      <div id="rocks-slots" class="rocks-slots"></div>
+      <div id="status" class="tagline">Place rocks to pen the pony</div>
+    </section>
+
+    <section id="board-section" class="board-section">
+      <div id="col-labels" class="col-labels"></div>
+      <div class="board-row">
+        <div id="row-labels" class="row-labels"></div>
+        <div id="board-grid" class="board-grid"></div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="btn-undo">↶ Undo</button>
+      <button id="btn-redo">↷ Redo</button>
+      <button id="btn-reset" class="primary">⟳ Reset</button>
+      <button id="btn-help">? Help</button>
+    </section>
+
+    <dialog id="help-dialog">
+      <article id="help-content"></article>
+      <form method="dialog"><button>Close</button></form>
+    </dialog>
+  </main>
+
+  <script type="module" src="./ponypen-web.js"></script>
+</body>
+</html>

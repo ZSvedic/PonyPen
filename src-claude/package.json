@@ -1,0 +1,10 @@
+{
+  "name": "ponypen",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "bun test",
+    "web": "bun serve.js"
+  }
+}

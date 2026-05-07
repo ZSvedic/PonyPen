@@ -1,0 +1,65 @@
+# PonyPen Web UI — Mockup 
+  Level bees_teleport, 8×6, non-optimal solution.
+  ┌────────────────────────────────────────────────────────────────────────┐
+  │                                                                        │
+  │  ┌─────┐                              ┌─────┐ ┌─────┐ ┌─────┐ ┌─────┐  │
+  │  │big P│  PonyPen                     │TILES│ │BONUS│ │SCORE│ │BEST │  │
+  │  │emoji│  bees teleport ▾             │   8 │ │  10 │ │  18 │ │  19 │  │
+  │  └─────┘  ───────────────             └─────┘ └─────┘ └─────┘ └─────┘  │
+  │                                                                        │
+  │  ROCKS 4/4                                Place rocks to pen the pony  │
+  │  ▣ ▣ ▣ ▣                                                               │
+  │                   1    2    3    4    5    6    7    8                 │
+  │                ┌────┬────┬────┬────┬────┬────┬────┬────┐               │
+  │             1  │  . │  = │  = │  = │  = │  = │  = │  . │               │
+  │                ├────┼────┼────┼────┼────┼────┼────┼────┤               │
+  │             2  │  = │  B │  # │  = │ :. │  = │  . │  . │               │
+  │                ├────┼────┼────┼────┼────┼────┼────┼────┤               │
+  │             3  │  = │  # │ :@ │ :. │ :. │  = │  . │  . │               │
+  │                ├────┼────┼────┼────┼────┼────┼────┼────┤               │
+  │             4  │  = │  = │  = │  = │ :P │  = │  . │  . │               │
+  │                ├────┼────┼────┼────┼────┼────┼────┼────┤               │
+  │             5  │  # │ :@ │ :A │  = │ :. │  # │  . │  . │               │
+  │                ├────┼────┼────┼────┼────┼────┼────┼────┤               │
+  │             6  │  . │  = │  = │  = │  = │  = │  = │  . │               │
+  │                └────┴────┴────┴────┴────┴────┴────┴────┘               │
+  │                                                                        │
+  │           ┌────────┐  ┌────────┐  ┌──────────┐  ┌────────┐             │
+  │           │ ↶ Undo │  │ ↷ Redo │  │ ⟳ Reset  │  │ ? Help │             │
+  │           └────────┘  └────────┘  └──────────┘  └────────┘             │
+  │                                                                        │
+  └────────────────────────────────────────────────────────────────────────┘
+
+# Tile key (4-char tile notation)
+  =  water (≈)      .  grass       #  rock (🪨)     P  pony (🐴)
+  @  portal (🌀)    B  bee (🐝)    A  apple (🍎)    C  cherry (🍒)
+  : prefix - enclosed tile (yellow background) — appears once pen closes
+  □/▣ - empty/filled rock slot (in header)
+
+# Legend
+  ────────────────────────────────────────────────────────────────────────────────
+  Element                             Text color  Background / border color 
+  ────────────────────────────────────────────────────────────────────────────────
+  Page background                     —           #0F0F1E (very dark navy)
+  Card/panel background               —           #1A1A2E (dark navy, raised)
+  Card border                         —           #2A2A3E (subtle)
+  Logo tile (rounded square)          —           #F1C40F (yellow)
+  Brand kicker "PONYPEN"              #8A8A9E   transparent (uppercase, tracked)
+  Level chooser "bees teleport ▾"     #EEEEEE   transparent (dropdown)
+  Stat box label (TILES/BONUS/SCORE)  #8A8A9E   #1A1A2E (uppercase, small)
+  Stat box value (BEST)               #F1C40F   #1A1A2E (yellow, bold)
+  "ROCKS · 0/4" label                 #EEEEEE   transparent
+  Empty rock slot □                   —           #1A1A2E (border #3A3A4E)
+  Filled rock slot ▣                  —           #5F6872 (gray, like rock)
+  Tagline "Place rocks…"              #8A8A9E   transparent
+  Row/col number labels               #8A8A9E   transparent (muted)
+  Grass tile (.)                      —           #3FA84A (green)
+  Water tile (=)                      #EEEEEE   #1E4E8E (dark blue, white ≈)
+  Rock tile (#)                       —           #5F6872 (gray)
+  Enclosed tile (:. :P :@ :A :B :C)   —           #F1C40F (yellow)
+  Tile emoji (🐴🍒🍎🐝🌀🪨≈)            centered in tile via CSS
+  Button (Undo/Redo/Help)             #EEEEEE   #1A1A2E (border #2A2A3E)
+  Button — primary (Reset)            #1A1A2E   #EEEEEE (inverted)
+  Button hover                        #EEEEEE   #2D2D4E
+  Button disabled (e.g. Undo)         #5F6872   #1A1A2E (border #2A2A3E)
+  ────────────────────────────────────────────────────────────────────────────────
