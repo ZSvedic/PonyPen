@@ -11,5 +11,5 @@ The purpose was to test:
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/).
-- [Bun](https://bun.com/).
+- [Node.js](https://nodejs.org/)
+- [Bun](https://bun.com/)
